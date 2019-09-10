@@ -1,0 +1,253 @@
+/* Archivo: sesionCuatro.playground
+ * Autor: Cristian Tafolla Rosales
+ * Asignatura: Desarrollo con Swift
+ * Semestre: 2020 - 1 */
+
+import UIKit
+
+/* Funciones:
+ *
+ * Parte de un programa que perimite resolver una tarea específica.
+ * Un bloque de código ejecutable.
+ 
+ * Definición de la función:
+ 
+ func nombreFuncion (parámetros) -> tipoRetorno {
+    cuerpo de la función
+ }*/
+
+// Ejemplo:
+
+func saludarAmigo (nombre: String) -> Int{
+    print("Hola \(nombre)")
+    return 3
+}
+
+/* Invocando una función:
+ *
+ * nombreFuncion (argumento)*/
+
+let valor = saludarAmigo(nombre: "Pablo")
+print (valor)
+
+// Podemos definir un procedimiento:
+
+func contarCuento () {
+    print("""
+        Érase una vez una niña que era muy querida por su abuelita,
+        a la que visitaba con frecuencia aunque vivía al otro lado
+        del bosque. Su madre que sabía coser muy bien le había hecha
+        una bonita caperuza roja que la niña nunca se quitaba, por lo
+        que todos la llamaban Caperucita Roja 👩🏼.
+    """)
+}
+
+func fraseMotivacional () {
+    print("""
+        Al chile
+
+        Soy
+        mucha
+        salsa
+
+        Para tus
+                
+                Papitas
+    """)
+}
+
+contarCuento()
+
+// Podemos definir una función, sin valor de retorno:
+
+/*
+
+ Nota: los parámetros son constantes
+func cuadruplicarNumero (numero: Int){
+    numero *= 3
+    print ("El resultado es: \(numero)")
+}
+*/
+
+func cuadruplicarNumero (numero: Int){
+    let resultado = 4 * numero
+    print ("4 veces \(numero) es igual a \(resultado)")
+}
+
+cuadruplicarNumero(numero: 4)
+
+// Podemos indicar n numero de argumentos:
+
+func invitacionBoda (novio: String, novia: String){
+    print ("Estás invitado a la boda de \(novio) y \(novia) en la Basílica.")
+}
+
+invitacionBoda(novio: "Christian", novia: "Nadia")
+
+// Podemos etiquetar argumentos:
+
+func invitacionDivorcio (de suertudo: String, y suertuda: String){
+    print("Estás invitado al divorcio de \(suertudo) y \(suertuda) en el juzgado de lo familiar frente al Hemiciclo a Juárez. ")
+}
+
+invitacionDivorcio(de: "Christian", y: "Nadia")
+
+// Podemos asignar una pseudoetiqueta
+
+func graficando (_ ejeVertical: Float, _ ejeHorizontal: Float){
+    print("Recorriendo \(ejeVertical) puntos en las abscisas y \(ejeHorizontal) puntos en las ordenadas.")
+}
+
+graficando(1.0, 2.3)
+
+// Podemos asignar valores por default
+
+func saludando(separador: String = " ", parteUno: String = "Hola", parteDos: String){
+    print("\(parteUno)\(separador)\(parteDos)")
+}
+
+saludando(parteDos: "crayola")
+
+/* Estructuras:
+ *
+ * Agrupamiendo de una o más propiedades utilizando un nombre como
+ * referencia.
+ *
+ * Definición:
+ 
+ struct NombreEstructura {
+    var nombreUno: Tipo
+    .
+    .
+    .
+    var nombreN: Tipo
+ }*/
+
+// Ejemplo:
+
+struct Perro {
+    var nombre: String
+    var edad: Int
+    var vacunaRabia: Bool
+    var color: String
+    var raza: String
+}
+
+// Instanciando la estructura
+
+let perroUno = Perro (nombre: "Chau", edad: 2, vacunaRabia: true, color: "negro", raza: "Schnauzer")
+
+print(perroUno.nombre)
+print(perroUno.raza)
+print(perroUno.color)
+
+// Podemos agregar funcionalidad a la estructura mediante métodos:
+
+struct Transporte {
+    var nombre: String
+    var color: String
+    var modelo: String
+    func avanzar() {
+        print ("Ahí te voy")
+    }
+}
+
+let metroUno = Transporte (nombre: "Elena Poniatowska", color: "Naranja", modelo: "2010")
+
+let cocheUno = Transporte (nombre: "Cuqui", color: "Arena", modelo: "2018")
+
+let biciUno = Transporte (nombre: "Poqui", color: "Rojo", modelo: "2000")
+
+biciUno.avanzar()
+
+/* Enumeraciones
+ * Conjunto de datos de un mismo tipo que agrupa valores que se relacionan
+ * entre sí.
+ *
+ * Definicion:
+ *
+    enum NombreEnumeracion {
+        case
+    }
+ */
+
+// Ejemplo:
+
+enum PuntosCardinales{
+    case norte
+    case sur
+    case este
+    case oeste
+}
+
+struct EstadoRepublica {
+    var nombre: String
+    var ubicacion: PuntosCardinales
+}
+
+let estadoUno = EstadoRepublica(nombre: "Chihuahua", ubicacion: .norte)
+let estadoDos = EstadoRepublica(nombre: "Nayarit", ubicacion: .oeste)
+let estadoTres = EstadoRepublica (nombre: "Oaxaca", ubicacion: .sur)
+
+switch estadoUno.ubicacion {
+case .norte:
+    print("Arre")
+case .sur:
+    print("Bomba")
+case .este:
+    print("Jalo")
+case .oeste:
+    print("...")
+}
+
+/* Clases:
+ *
+ * Abstracción de un conjunto de objetos similares.
+ *
+ * Definición:
+ 
+ class NombreClase {
+    let nombre: Tipo
+ 
+    var propiedad: Tipo = ValorInicial
+ 
+    init (){
+        nombre = valorDefault
+    }
+ 
+    func metodo() {
+        cuerpoDelMetodo
+    }
+ 
+ }*/
+
+// Ejemplo:
+
+class Alumno {
+    let nombre: String
+    var calificacion: Int = 10
+    
+    init (){
+        nombre = " "
+    }
+    
+    func reprobarMateria() {
+        print("Póngame 0")
+    }
+}
+
+let alumnoUno = Alumno()
+
+print("El valor por default de calificación es: \(alumnoUno.calificacion)")
+
+class AlumnoUnam: Alumno {
+    var numeroCuenta = " "
+    override func reprobarMateria() {
+        print("Pongame NP")
+    }
+}
+
+let alumnoDos = AlumnoUnam()
+
+alumnoDos.reprobarMateria()
+alumnoUno.reprobarMateria()
