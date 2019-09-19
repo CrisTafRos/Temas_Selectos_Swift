@@ -7,3 +7,6 @@ Sesión del 12 de septiembre:
 
 Sesión del 17 de septiembre:
 1. <a href = https://github.com/CrisTafRos/pruebaUno> Ejercicio Onboarding y Control de versiones </a>
+
+Sesión del 19 de septiembre:
+1. <a href = https://github.com/CrisTafRos/CostumeTableView> Ejercicio Custom Table View </a>
